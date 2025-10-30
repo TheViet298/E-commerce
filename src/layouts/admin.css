@@ -1,0 +1,95 @@
+:root{
+  --bg:#0f172a;          /* sidebar navy */
+  --bg-2:#111827;        /* topbar dark */
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --brand:#0ea5e9;       /* xanh */
+  --hover:#0b8fc7;
+  --border:#e5e7eb;
+}
+
+.admin{ display:flex; min-height:100vh; color:var(--text); background:#f8fafc; }
+
+/* Sidebar */
+.admin__sidebar{
+  width:260px; flex:0 0 260px; background:var(--bg); color:#e5e7eb;
+  display:flex; flex-direction:column; padding:16px 12px; gap:12px;
+  position:sticky; top:0; height:100vh;
+}
+.admin__brand{ display:flex; align-items:center; gap:12px; padding:8px 10px; }
+.admin__avatar{
+  width:40px;height:40px;border-radius:50%; background:#334155;
+  display:grid;place-items:center;font-weight:700;color:#fff;
+}
+.admin__brand-name{ font-weight:700; color:#fff; }
+.admin__brand-sub{ font-size:12px; color:#cbd5e1; }
+
+.admin__section{ margin-top:12px; }
+.admin__section-title{
+  font-size:11px; text-transform:uppercase; letter-spacing:.08em;
+  color:#94a3b8; padding:6px 12px;
+}
+.admin__links{ list-style:none; margin:0; padding:0; }
+.admin__link{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; color:#e5e7eb; text-decoration:none; border-radius:8px;
+}
+.admin__link:hover{ background:#1f2937; }
+.admin__link--active{ background:#0b1220; outline:1px solid #1f2a3a; color:#fff; }
+.admin__icon{ width:20px; display:inline-grid; place-items:center; }
+
+/* Right side */
+.admin__right{ display:flex; flex-direction:column; flex:1; min-width:0; }
+.admin__topbar{
+  height:56px; background:var(--bg-2); color:#e5e7eb;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 16px; position:sticky; top:0; z-index:5;
+}
+.admin__breadcrumb{ font-weight:600; }
+.admin__content{ padding:20px; display:block; }
+.admin__footer{ color:var(--muted); padding:12px 20px; border-top:1px solid var(--border); }
+
+.btn{ border:1px solid var(--border); background:#fff; padding:6px 12px; border-radius:8px; cursor:pointer; }
+.btn--light{ background:#e5e7eb; border-color:#d1d5db; }
+.btn:hover{ filter:brightness(0.97); }
+
+/* Card & grid utilities cho các trang con nếu cần */
+.card{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px; }
+.grid{ display:grid; gap:12px; }
+.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+/* Responsive: thu gọn sidebar */
+@media (max-width: 1024px){
+  .admin__sidebar{ width:80px; flex-basis:80px; padding:16px 8px; }
+  .admin__brand-name,.admin__brand-sub{ display:none; }
+  .admin__link span:not(.admin__icon){ display:none; }
+}
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #334155;
+}
+.table tr:hover td {
+  background: #f9fafb;
+}
+
+button {
+  font-size: 14px;
+}
